@@ -6,8 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DevSilk Websites | Change Your Script</title>
-    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro|Open+Sans:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="./fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./fav/favicon-16x16.png">
+    <link rel="manifest" href="./fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <style>
+        :root {
+            --accent-color: #34ebff;
+        }
+
         * {
             box-sizing: border-box;
         }
@@ -15,10 +38,8 @@
         body {
             font-size: 16px;
             font-family: "Open Sans", Helvetica, Arial, sans-serif;
-        }
-
-        header {
-            padding: 50px 0;
+            position: relative;
+            margin: 0;
         }
 
         h1,
@@ -43,21 +64,101 @@
             margin-top: 100px;
         }
 
-        code {
-            font-family: "Anonymous Pro", monospace;
+        header {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            z-index: 1;
+        }
+
+        header figure {
+            margin: 0;
+        }
+
+        header svg {
+            width: 50px;
+            height: 50px;
+            fill: #eee;
+            stroke: #eee;
+        }
+
+        .hero-section {
+            background: url(./img/hero_unsplash.jpg) top center / cover fixed no-repeat;
+            height: 100vh;
+            color: #eee;
+            position: relative;
+        }
+
+        .hero-wrap {
+            position: absolute;
+            top: calc(45% - 50px);
+            height: 100px;
+            left: 0;
+            right: 0;
+        }
+
+        .hero-section h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-section h1 em {
+            font-style: normal;
+            color: var(--accent-color);
+        }
+
+        @media (min-width: 800px) {
+            header {
+                position: fixed;
+            }
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>
-            <code>dev</code>Silk Websites</h1>
-        <h2>Change Your Script</h2>
-        <h3>Coming soon...</h3>
+        <figure class="main-logo">
+            <svg id="logo-svg" data-name="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 205.44 205.44">
+                <title>Dev Silk Websites</title>
+                <path d="M806.45,401.43a55.33,55.33,0,0,0-39.26-16.26v0a38.85,38.85,0,0,1-38.83-38.89h0a38.85,38.85,0,0,1,38.85-38.85h35.69V290.78H767.22a55.55,55.55,0,0,0-55.53,55.53h0a55.53,55.53,0,0,0,55.51,55.5v0a38.86,38.86,0,0,1,0,77.71H634V307.46h84.58a56.56,56.56,0,0,1,24.62-16.68H617.28V496.22H767.19a55.52,55.52,0,0,0,39.26-94.79Z"
+                    transform="translate(-617.28 -290.78)" />
+            </svg>
+        </figure>
     </header>
 
-    <main></main>
+    <main>
+        <section class="hero-section">
+            <div class="hero-wrap">
+                <h1>We Are <em>DevSilk Websites</em></h1>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="about-col">
+                <h3>What We Do</h3>
+            </div>
+            <div class="about-col">
+                <h3>Our Values</h3>
+            </div>
+            <div class="about-col">
+                <h3>Our Tech</h3>
+            </div>
+        </section>
+
+        <section class="work-section">
+            <h2>Our Work</h2>
+        </section>
+
+        <section class="services-section">
+
+        </section>
+
+        <section class="team-section">
+            <h2></h2>
+        </section>
+    </main>
 
     <footer></footer>
 </body>
