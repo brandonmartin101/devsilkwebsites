@@ -26,9 +26,20 @@
     <meta name="msapplication-TileImage" content="./fav/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115797654-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-115797654-3');
+    </script>
+
     <style>
         :root {
             --accent-color: #34ebff;
+            --sub-color: #2fcbdc;
         }
 
         ::selection {
@@ -90,6 +101,16 @@
             stroke: #ededed;
         }
 
+        svg .primary {
+            fill: #222;
+            stroke: #222;
+        }
+
+        svg .secondary {
+            fill: var(--sub-color);
+            stroke: var(--sub-color);
+        }
+
         section {
             clear: both;
         }
@@ -101,6 +122,7 @@
             padding: 20px 0;
         }
 
+        /***** Hero Section *****/
         .hero-section {
             background: #222 url(./img/hero_unsplash.jpg) top center / cover fixed no-repeat;
             height: 100vh;
@@ -126,9 +148,10 @@
             color: var(--accent-color);
         }
 
+        /***** About Section *****/
         .about-section {
             text-align: center;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -139,14 +162,61 @@
 
         .about-icon {
             max-height: 125px;
+            stroke-width: 0;
         }
 
+        .about-icon .secondary {
+            transition: transform .3s;
+        }
+
+        .about-icon.speed .secondary {
+            transform-origin: 62% 54%;
+            /* animation: 5s rev ease-in infinite; */
+        }
+
+        @keyframes rev {
+
+            0%,
+            20% {
+                transform: rotate(0deg);
+            }
+
+            28%,
+            35%,
+            45%,
+            55%,
+            65% {
+                transform: rotate(75deg);
+            }
+
+            29%,
+            33%,
+            39%,
+            50%,
+            58%,
+            68% {
+                transform: rotate(69deg);
+            }
+
+            30%,
+            70% {
+                transform: rotate(70deg);
+            }
+
+            80%,
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        /***** Work Section *****/
         .work-section {
             background: #ededed;
             border-top: 1px solid #ddd;
             border-bottom: 1px solid #ddd;
         }
 
+        /***** Team Section *****/
         .team-section {
             color: #ededed;
             background: #444;
@@ -158,9 +228,10 @@
                 position: fixed;
             }
 
-            .about-section .about-col {
-                width: 33.33333%;
-                float: left;
+            .about-col {
+                width: 30%;
+                padding: 0 25px;
+                display: inline-block;
             }
         }
 
@@ -188,48 +259,9 @@
             </div>
         </section>
 
-        <section class="about-section hidden">
+        <section class="about-section">
             <div class="about-col">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="5 0 48 60" class="about-icon">
-                    <title>
-                        Speedometer
-                    </title>
-                    <g id="gauge">
-                        <g id="main">
-                            <path d="M33,0h0a1,1,0,0,0,0,2h0A28.08,28.08,0,0,1,51.41,48H16a1,1,0,0,0,0,2H49.56A27.93,27.93,0,0,1,5.78,44H49a1,1,0,0,0,0-2H4.72A28.09,28.09,0,0,1,27,2h0a1,1,0,0,0,0-2h0a30,30,0,1,0,6,0ZM6,30a1,1,0,0,0,2,0,22,22,0,0,1,44,0,1,1,0,0,0,2,0A24,24,0,0,0,6,30Z"
-                                class="primary" />
-                        </g>
-                        <g id="dial">
-                            <path d="M30,14a1,1,0,0,0-1,1V37a1,1,0,0,0,2,0V15A1,1,0,0,0,30,14Z" class="secondary" />
-                        </g>
-                    </g>
-                </svg>
-                <h3>Our Values</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-                    tristique. Duis cursus, mi quis ornare dolor interdum.</p>
-            </div>
-            <div class="about-col">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 60" class="about-icon">
-                    <title>
-                        Lock
-                    </title>
-                    <g id="lock">
-                        <g id="main">
-                            <path d="M44,24H4a4,4,0,0,0-4,4V59a1,1,0,0,0,2,0V28a2,2,0,0,1,2-2H44a2,2,0,0,1,2,2V56a2,2,0,0,1-2,2H7a1,1,0,0,0,0,2H44a4,4,0,0,0,4-4V28A4,4,0,0,0,44,24ZM14,12a10,10,0,0,1,20,0v7a1,1,0,0,0,2,0V12a12,12,0,0,0-24,0V24h2Z"
-                                class="primary" />
-                        </g>
-                        <g id="keyhole">
-                            <path d="M24,34a6,6,0,0,0-3,11.17V47a3,3,0,0,0,6,0V45.17A6,6,0,0,0,24,34Zm1,9.86V47a1,1,0,0,1-2,0V43.86a4,4,0,1,1,2,0Z"
-                                class="secondary" />
-                        </g>
-                    </g>
-                </svg>
-                <h3>Our Tech</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-                    tristique. Duis cursus, mi quis ornare dolor interdum.</p>
-            </div>
-            <div class="about-col">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 0 48 60" class="about-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 0 48 60" class="about-icon phone">
                     <title>
                         Phone
                     </title>
@@ -248,17 +280,56 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
                     tristique. Duis cursus, mi quis ornare dolor interdum.</p>
             </div>
+            <div class="about-col">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="5 0 48 60" class="about-icon speed">
+                    <title>
+                        Speedometer
+                    </title>
+                    <g id="gauge">
+                        <g id="main">
+                            <path d="M33,0h0a1,1,0,0,0,0,2h0A28.08,28.08,0,0,1,51.41,48H16a1,1,0,0,0,0,2H49.56A27.93,27.93,0,0,1,5.78,44H49a1,1,0,0,0,0-2H4.72A28.09,28.09,0,0,1,27,2h0a1,1,0,0,0,0-2h0a30,30,0,1,0,6,0ZM6,30a1,1,0,0,0,2,0,22,22,0,0,1,44,0,1,1,0,0,0,2,0A24,24,0,0,0,6,30Z"
+                                class="primary" />
+                        </g>
+                        <g id="dial">
+                            <path d="M30,14a1,1,0,0,0-1,1V37a1,1,0,0,0,2,0V15A1,1,0,0,0,30,14Z" class="secondary" />
+                        </g>
+                    </g>
+                </svg>
+                <h3>Our Values</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
+                    tristique. Duis cursus, mi quis ornare dolor interdum.</p>
+            </div>
+            <div class="about-col">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 60" class="about-icon lock">
+                    <title>
+                        Lock
+                    </title>
+                    <g id="lock">
+                        <g id="main">
+                            <path d="M44,24H4a4,4,0,0,0-4,4V59a1,1,0,0,0,2,0V28a2,2,0,0,1,2-2H44a2,2,0,0,1,2,2V56a2,2,0,0,1-2,2H7a1,1,0,0,0,0,2H44a4,4,0,0,0,4-4V28A4,4,0,0,0,44,24ZM14,12a10,10,0,0,1,20,0v7a1,1,0,0,0,2,0V12a12,12,0,0,0-24,0V24h2Z"
+                                class="primary" />
+                        </g>
+                        <g id="keyhole">
+                            <path d="M24,34a6,6,0,0,0-3,11.17V47a3,3,0,0,0,6,0V45.17A6,6,0,0,0,24,34Zm1,9.86V47a1,1,0,0,1-2,0V43.86a4,4,0,1,1,2,0Z"
+                                class="secondary" />
+                        </g>
+                    </g>
+                </svg>
+                <h3>Our Tech</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
+                    tristique. Duis cursus, mi quis ornare dolor interdum.</p>
+            </div>
         </section>
 
-        <section class="work-section hidden">
+        <section class="work-section">
             <h2>Our Work</h2>
         </section>
 
-        <section class="services-section hidden">
+        <section class="services-section">
             <h2>Services We Offer</h2>
         </section>
 
-        <section class="team-section hidden">
+        <section class="team-section">
             <h2>Our Team</h2>
         </section>
     </main>
@@ -266,6 +337,7 @@
     <footer>
         &copy; 2018 DevSilk Websites
     </footer>
+
 </body>
 
 </html>
