@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="about-icon lock" viewBox="0 0 48 60">
+    <title>
+        Lock
+    </title>
+    <g id="lock">
+        <g id="main">
+            <path d="M44,24H4a4,4,0,0,0-4,4V59a1,1,0,0,0,2,0V28a2,2,0,0,1,2-2H44a2,2,0,0,1,2,2V56a2,2,0,0,1-2,2H7a1,1,0,0,0,0,2H44a4,4,0,0,0,4-4V28A4,4,0,0,0,44,24ZM14,12a10,10,0,0,1,20,0v7a1,1,0,0,0,2,0V12a12,12,0,0,0-24,0V24h2Z" class="primary"/>
+        </g>
+        <g id="keyhole">
+            <path d="M24,34a6,6,0,0,0-3,11.17V47a3,3,0,0,0,6,0V45.17A6,6,0,0,0,24,34Zm1,9.86V47a1,1,0,0,1-2,0V43.86a4,4,0,1,1,2,0Z" class="secondary"/>
+        </g>
+    </g>
+</svg>
