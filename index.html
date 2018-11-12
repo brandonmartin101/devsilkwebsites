@@ -28,7 +28,7 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115797654-3"></script>
-    <script>
+    <script defer>
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
@@ -40,18 +40,13 @@
     </script>
 
     <style>
-        :root {
-            --accent-color: #34ebff;
-            --sub-color: #2fcbdc;
-        }
-
         ::selection {
-            background: var(--accent-color);
+            background: #34ebff;
             color: #222;
         }
 
         ::-moz-selection {
-            background: var(--accent-color);
+            background: #34ebff;
             color: #222;
         }
 
@@ -102,6 +97,15 @@
             height: 50px;
             fill: #ededed;
             stroke: #ededed;
+            filter: drop-shadow(0 0 1px #222);
+        }
+
+        a,
+        a:hover,
+        a:focus,
+        a:visited {
+            color: #28adbb;
+            font-weight: bold;
         }
 
         svg .primary {
@@ -110,8 +114,17 @@
         }
 
         svg .secondary {
-            fill: var(--sub-color);
-            stroke: var(--sub-color);
+            fill: #2fcbdc;
+            stroke: #2fcbdc;
+        }
+
+        ul {
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        li {
+            margin: 10px 0;
         }
 
         section {
@@ -148,19 +161,24 @@
 
         .hero-section h1 em {
             font-style: normal;
-            color: var(--accent-color);
+            color: #34ebff;
         }
 
         /***** About Section *****/
         .about-section {
             text-align: center;
             max-width: 1400px;
-            margin: 0 auto;
+            margin: 7vh auto;
+        }
+
+        .about-section h2 {
+            margin-top: 0;
         }
 
         .about-col {
             padding: 0 15px;
-            margin: 10vh 0;
+            margin: 3vh 0 0;
+            vertical-align: top;
         }
 
         .about-icon {
@@ -168,62 +186,74 @@
             stroke-width: 0;
         }
 
-        .about-icon .secondary {
-            transition: transform .3s;
+        /***** Services Section *****/
+        .services-section {
+            color: #ededed;
+            background: #444;
+            border: 1px solid #444;
+            margin: 0 0 20px;
+            padding: 7vh 0;
+            text-align: center;
         }
 
-        .about-icon.speed .secondary {
-            transform-origin: 62% 54%;
-            /* animation: 5s rev ease-in infinite; */
+        .services-col {
+            vertical-align: top;
+            border: 2px solid #34ebff;
+            border-radius: 10px;
         }
 
-        @keyframes rev {
-
-            0%,
-            20% {
-                transform: rotate(0deg);
-            }
-
-            28%,
-            35%,
-            45%,
-            55%,
-            65% {
-                transform: rotate(75deg);
-            }
-
-            29%,
-            33%,
-            39%,
-            50%,
-            58%,
-            68% {
-                transform: rotate(69deg);
-            }
-
-            30%,
-            70% {
-                transform: rotate(70deg);
-            }
-
-            80%,
-            100% {
-                transform: rotate(0deg);
-            }
+        .services-col:first-of-type {
+            border-color: #2778ff;
         }
 
-        /***** Work Section *****/
-        .work-section {
-            background: #ededed;
-            border-top: 1px solid #ddd;
-            border-bottom: 1px solid #ddd;
+        .services-col:last-of-type {
+            border-color: #27ff9c;
+        }
+
+        .services-col h3 {
+            position: relative;
+        }
+
+        .services-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            height: 2px;
+            left: calc(50% - 50px);
+            right: calc(50% - 50px);
+            background: #34ebff;
+        }
+
+        .services-col:first-of-type h3::after {
+            background: #2778ff;
+        }
+
+        .services-col:last-child h3::after {
+            background: #27ff9c;
+        }
+
+        .services-price {
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+
+        .services-list {
+            list-style-type: none;
+        }
+
+        .services-time {
+            font-weight: bold;
         }
 
         /***** Team Section *****/
         .team-section {
-            color: #ededed;
-            background: #444;
-            border: 1px solid #444;
+            text-align: center;
+            margin: 7vh 0;
+        }
+
+        .team-section p {
+            max-width: 800px;
+            margin: 2vh auto;
         }
 
         @media (min-width: 800px) {
@@ -231,10 +261,19 @@
                 position: fixed;
             }
 
-            .about-col {
-                width: 30%;
+            .about-col,
+            .services-col {
                 padding: 0 25px;
                 display: inline-block;
+            }
+
+            .about-col {
+                width: 30%;
+            }
+
+            .services-col {
+                width: 28%;
+                margin: 0 1%;
             }
         }
 
@@ -248,7 +287,7 @@
     <header>
         <figure class="main-logo">
             <svg id="logo-svg" data-name="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 205.44 205.44">
-                <title>Dev Silk Websites</title>
+                <title>DevSilk Websites</title>
                 <path d="M806.45,401.43a55.33,55.33,0,0,0-39.26-16.26v0a38.85,38.85,0,0,1-38.83-38.89h0a38.85,38.85,0,0,1,38.85-38.85h35.69V290.78H767.22a55.55,55.55,0,0,0-55.53,55.53h0a55.53,55.53,0,0,0,55.51,55.5v0a38.86,38.86,0,0,1,0,77.71H634V307.46h84.58a56.56,56.56,0,0,1,24.62-16.68H617.28V496.22H767.19a55.52,55.52,0,0,0,39.26-94.79Z"
                     transform="translate(-617.28 -290.78)" />
             </svg>
@@ -263,10 +302,11 @@
         </section>
 
         <section class="about-section">
+            <h2>Our Values</h2>
             <div class="about-col">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 0 48 60" class="about-icon phone">
                     <title>
-                        Phone
+                        Beauty
                     </title>
                     <g id="phone">
                         <g id="main">
@@ -279,14 +319,13 @@
                         </g>
                     </g>
                 </svg>
-                <h3>What We Do</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-                    tristique. Duis cursus, mi quis ornare dolor interdum.</p>
+                <h3>Beauty</h3>
+                <p>The web should function flawlessly, but it should also inspire as well as any work of art.</p>
             </div>
             <div class="about-col">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="5 0 48 60" class="about-icon speed">
                     <title>
-                        Speedometer
+                        Speed
                     </title>
                     <g id="gauge">
                         <g id="main">
@@ -298,14 +337,14 @@
                         </g>
                     </g>
                 </svg>
-                <h3>Our Values</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-                    tristique. Duis cursus, mi quis ornare dolor interdum.</p>
+                <h3>Speed</h3>
+                <p>With every millisecond of page load time costing money and visitors, we value streamlined sites that
+                    work quickly.</p>
             </div>
             <div class="about-col">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 60" class="about-icon lock">
                     <title>
-                        Lock
+                        Security
                     </title>
                     <g id="lock">
                         <g id="main">
@@ -318,22 +357,56 @@
                         </g>
                     </g>
                 </svg>
-                <h3>Our Tech</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-                    tristique. Duis cursus, mi quis ornare dolor interdum.</p>
+                <h3>Security</h3>
+                <p>We value enabling safe, secure web browsing, whether it be for e-commerce or browsing your sister's
+                    blog.</p>
             </div>
-        </section>
-
-        <section class="work-section">
-            <h2>Our Work</h2>
         </section>
 
         <section class="services-section">
             <h2>Services We Offer</h2>
+            <div class="services-col">
+                <h3>Basic</h3>
+                <div class="services-price">$100</div>
+                <ul class="services-list">
+                    <li>WordPress site setup</li>
+                    <li>Setup of recommended plugins</li>
+                    <li>Pre-purchased theme setup</li>
+                </ul>
+                <p class="services-time">Completed in one business day</p>
+            </div>
+            <div class="services-col">
+                <h3>Advanced</h3>
+                <div class="services-price">$250</div>
+                <ul class="services-list">
+                    <li>WordPress site setup</li>
+                    <li>Setup of recommended plugins</li>
+                    <li>Theme customization with design alteration</li>
+                </ul>
+                <p class="services-time">Completed in two business days</p>
+            </div>
+            <div class="services-col">
+                <h3>Premium</h3>
+                <div class="services-price">$1,000</div>
+                <ul class="services-list">
+                    <li>WordPress site setup</li>
+                    <li>Setup of recommended plugins</li>
+                    <li>Custom theme created just for your site</li>
+                    <li>Design/branding consultation</li>
+                </ul>
+                <p class="services-time">Completed in five business days</p>
+            </div>
         </section>
 
         <section class="team-section">
             <h2>Our Team</h2>
+            <div class="portraits">
+
+            </div>
+            <p class="team-bio">We are a husband-wife duo, working to make the web a better place for people and
+                businesses. Brandon is the lead developer over all things tech. Kalie is chief designer and resident
+                opera singer. Reach out to us at <a href="mailto:devsilkwebsites@gmail.com">devsilkwebsites@gmail.com</a>
+                about your next project!</p>
         </section>
     </main>
 
